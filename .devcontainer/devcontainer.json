@@ -1,0 +1,22 @@
+{
+  "name": "dev",
+  "workspaceFolder": "/app",
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "dbaeumer.vscode-eslint"
+  ],
+  // An array port numbers to forward
+  "forwardPorts": [
+    8000
+  ],
+  // Container user VS Code should use when connecting
+  "remoteUser": "vscode",
+  // Set environment variables for VS Code and sub-processes
+  "remoteEnv": {
+    "MY_VARIABLE": "some-value"
+  }
+}

@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  language-admin:
+    container_name: language-admin
+    image: language-admin
+    build:
+      context: ./language-admin/
+      dockerfile: Dockerfile
+    # 将容器端口映射到主机端口，根据你的应用配置端口
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./language-admin:/app/
+    # 设置依赖服务（如数据库）的链接
+    # depends_on:
+    #   - db
+    # 环境变量设置（可选）
+    # environment:
+    #   - NODE_ENV=production
+    #   - PORT=3000
+    # 可以添加其他配置项
+
