@@ -11,7 +11,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./language-admin:/app/
+      - ./language-admin:/app
     # 设置依赖服务（如数据库）的链接
     # depends_on:
     #   - db
