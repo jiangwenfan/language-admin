@@ -49,7 +49,7 @@ class HomeSider extends Component {
                     onClick: () => {
                         console.log('sentence');
                         // 更新地址栏为/sentence
-                        this.props.history.push('/sentence');
+                        this.props.history.push('/home/sentence');
                     },
                 },
                     {
@@ -59,7 +59,7 @@ class HomeSider extends Component {
                         onClick: () => {
                             console.log('user');
                             // 更新地址栏为/user
-                            this.props.history.push('/user');
+                            this.props.history.push('/home/user');
                         },
                     },
                 ]}

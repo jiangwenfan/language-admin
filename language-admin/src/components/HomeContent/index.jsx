@@ -21,9 +21,9 @@ export default class HomeContent extends Component {
                     // borderRadius: borderRadiusLG,
                 }}
              >
-                <Route path="/user" component={User}/>
-                <Route path="/sentence" component={Sentence}/>
-                <Redirect to="/about"/>
+                <Route path="/home/user" component={User}/>
+                <Route path="/home/sentence" component={Sentence}/>
+                <Redirect to="/home/about"/>
             </Content>
         )
     }

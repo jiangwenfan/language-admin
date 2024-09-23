@@ -1,13 +1,11 @@
-import HomePage from './page/Home';
+import StartScreen from './components/start_screen';
 import './App.css';
 import {BrowserRouter} from 'react-router-dom'
 
 function App() {
   return (
     <BrowserRouter>
-    <div>
-      <HomePage />
-    </div>
+      <StartScreen />
     </BrowserRouter>
   );
 }
