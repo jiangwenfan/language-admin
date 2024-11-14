@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Button, Flex, Table, Modal } from "antd";
 import apiClient from "../../apiClient";
+import AddUser from "../../components/AddUser";
+import PubSub from "pubsub-js";
 
 // user列配置
 const columns = [
@@ -63,6 +65,10 @@ export default class User extends Component {
 
   componentDidMount() {
     console.log("componentDidMount");
+    PubSub.subscribe("isModalOpen", (msg, data) => {
+      console.log("订阅到消息: ", data);
+      this.setState({ isModalOpen: data });
+    });
     this.getAllUsers();
   }
 
@@ -130,14 +136,15 @@ export default class User extends Component {
           增加用户(弹出模态框，邮箱-验证码登陆)
         </button>
         <Modal
-          title="Basic Modal"
+          title="创建账号-通过邮箱和验证码"
+          // 对话框是否可见
           open={isModalOpen}
           onOk={this.handleOk}
           onCancel={this.handleClose}
+          // 不使用模态框的底部按钮
+          footer={null}
         >
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p>
+          <AddUser />
         </Modal>
         <Flex align="center" gap="middle">
           <Button
